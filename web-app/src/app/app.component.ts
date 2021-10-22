@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'web-app';
+
+  redirect(){
+    window.location.href = "https://www.google.com";
+  }
 }
+
