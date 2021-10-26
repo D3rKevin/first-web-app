@@ -7,17 +7,51 @@
   <span>H-hewwo~</span>
   <span class="example-spacer"></span>
 
-  <button mat-button (click)=redirect() class="icon-button">
-    <mat-icon aria-hidden="false" aria-label="Example home icon" class="toolbar-icon">home</mat-icon>
+  <button mat-button [matMenuTriggerFor]="menu" class="icon-button">
+    <mat-icon aria-hidden="false" aria-label="Example home icon" class="toolbar-icon">settings</mat-icon>
   </button>
+
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>
+      <span>Option 1</span>
+    </button>
+    <button mat-menu-item>
+      <span>Log Out</span>
+    </button>
+  </mat-menu>
+
 </mat-toolbar>
+
+
+
+
 <mat-sidenav-container>
-  <mat-sidenav #sidenav class="sidebar">
-    <div>
-      <span>A</span>
-    </div>
+  <mat-sidenav #sidenav class="sidebar" mode="push">
+      <nav>
+
+        <button routerLink='' routerLinkActive=true (click)=sidenav.close() class="sidebar-button">
+          <mat-icon>home</mat-icon>
+          <span>Start</span>
+        </button>
+
+        <mat-divider></mat-divider>
+
+        <button routerLink='/profile' routerLinkActive=true (click)=sidenav.close() class="sidebar-button">
+          <mat-icon>person</mat-icon>
+          <span>About</span>
+        </button>
+
+        <mat-divider></mat-divider>
+        
+        <button routerLink='/social' routerLinkActive=true (click)=sidenav.close() class="sidebar-button">
+          <mat-icon>group</mat-icon>
+          <span>Socials</span>
+        </button>
+      </nav>
   </mat-sidenav>
   <mat-sidenav-content>
-    <span>Very Nais</span>
+    <div class="main-content">
+      <router-outlet></router-outlet>
+    </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
