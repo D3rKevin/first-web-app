@@ -15,7 +15,7 @@
 }
 
 .sidebar {
-    width: 15vw;
+    width: 10vw;
     min-height: 500px;
     height: 100vh;
     text-align: center;
@@ -55,6 +55,6 @@ mat-sidenav-container {
     outline-style: none !important;
     background-color: Transparent;
     margin: auto;
-    width: calc(15vw - 15px);
+    width: calc(10vw - 15px);
     text-align: center;
 }

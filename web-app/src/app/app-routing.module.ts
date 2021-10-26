@@ -6,9 +6,9 @@ import { SocialsComponent } from './socials/socials.component';
 import { MainComponent } from './main/main.component';
 
 const routes: Routes = [
-  { path: 'profile', component: ProfileComponent},
+  { path: 'tokyo', component: MainComponent},
   { path: 'social', component: SocialsComponent},
-  { path: '', component: MainComponent}
+  { path: '', component: ProfileComponent}
 ];
 
 @NgModule({
